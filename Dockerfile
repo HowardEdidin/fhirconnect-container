@@ -25,6 +25,23 @@ RUN \
   rm -f mirthconnect-$MIRTH_CONNECT_VERSION-unix.tar.gz && \
   mv Mirth\ Connect/* /opt/mirth-connect/ && \
   chown -R mirth /opt/mirth-connect
+  
+  
+RUN mkdir /opt/mirth-connect/custom-lib3
+RUN chown -R mirth /opt/mirth-connect/custom-lib3
+
+RUN mkdir /opt/mirth-connect/inbound
+RUN chown -R mirth /opt/mirth-connect/inbound
+RUN chmod 777 -R /opt/mirth-connect/inbound
+
+RUN mkdir /opt/mirth-connect/outbound
+RUN chown -R mirth /opt/mirth-connect/outbound
+RUN chmod 777 -R /opt/mirth-connect/outbound
+
+
+RUN mkdir /opt/mirth-connect/settings
+RUN chown -R mirth /opt/mirth-connect/settings
+RUN chmod 777 -R /opt/mirth-connect/settings
 
 COPY mirth.properties /tmp
 COPY extension.properties /tmp
