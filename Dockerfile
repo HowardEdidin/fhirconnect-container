@@ -30,18 +30,7 @@ RUN \
 RUN mkdir /opt/mirth-connect/custom-lib3
 RUN chown -R mirth /opt/mirth-connect/custom-lib3
 
-RUN mkdir /opt/mirth-connect/inbound
-RUN chown -R mirth /opt/mirth-connect/inbound
-RUN chmod 777 -R /opt/mirth-connect/inbound
 
-RUN mkdir /opt/mirth-connect/outbound
-RUN chown -R mirth /opt/mirth-connect/outbound
-RUN chmod 777 -R /opt/mirth-connect/outbound
-
-
-RUN mkdir /opt/mirth-connect/settings
-RUN chown -R mirth /opt/mirth-connect/settings
-RUN chmod 777 -R /opt/mirth-connect/settings
 
 COPY mirth.properties /tmp
 COPY extension.properties /tmp
@@ -92,12 +81,7 @@ RUN mkdir /var/spool/mirth
 RUN chown -R mirth /var/spool/mirth
 VOLUME /var/spool/mirth
 
-
-
-
-
-
-EXPOSE 8080 8443 8042 8092 7011 7012 7013 5000
+EXPOSE 8088 8443 8042 8092 7011 7012 7013 5000
 
 COPY docker-entrypoint.sh /
 
